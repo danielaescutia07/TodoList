@@ -7,8 +7,8 @@ function TodoList(props) {
 
   return (
       <div>
-          <ul className='todo-list'>
-              <Todo todos={todos}/>
+          <ul>
+          
           </ul>
       </div>
   );

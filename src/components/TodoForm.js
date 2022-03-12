@@ -1,11 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 
-//*Ant Design Component imports
-import { Layout, Menu, Breadcrumb } from 'antd';
-
-const { Header, Content, Footer } = Layout;
-
 function TodoForm(props) {
 
     const {inputText, setInputText, todos, setTodos} = props;
@@ -29,23 +24,31 @@ function TodoForm(props) {
     };
 
   return (
-      <form className='todo-form' onSubmit={handleSubmit}>
-          <input
-            type='text'
-            value={inputText}
-            className='todo-input'
-            onChange={onChange}
-          />
-          <button className='todo-button'>Add todo</button>
-          <div className='select'>
-              <select className='filter-todo'>
-                  <option value='all'>All</option>
-                  <option value='completed'>Completed</option>
-                  <option value='uncompleted'>Uncompleted</option>
-              </select>
-          </div>
-      </form>
-  )
-}
+        <form className='todo-form'onSubmit={handleSubmit}>
+            <div className='row justify-content-center'>
+                <div className='col-6' style={{display: 'flex'}}>
+                    <input
+                        type='text'
+                        value={inputText}
+                        className='form-control'
+                        onChange={onChange}
+                        placeholder='Add a todo'
+                    />
+                    <button type="submit" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <div className='col-3'>
+                    <select className='form-select' defaultValue="All">
+                        <option value='all'>All</option>
+                        <option value='completed'>Completed</option>
+                        <option value='uncompleted'>Uncompleted</option>
+                    </select>
+                </div>
+
+            </div>
+        </form>
+  );
+};
 
 export default TodoForm;

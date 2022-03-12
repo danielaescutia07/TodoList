@@ -1,15 +1,11 @@
 import React from 'react';
-import { Button } from 'antd';
 
-import 'antd/dist/antd.css';
 
 function Todo() {
 
   return (
-      <div>
-          <li className='todo-item'>Hello</li>
-          <Button type="primary">Primary Button</Button>
-          <button></button>
+      <div >
+          <li className='todo-item' style={{ alignContent: "center"}}>Take out garbage</li>
       </div>
   );
 }
