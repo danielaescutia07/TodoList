@@ -17,13 +17,20 @@ function App() {
   return (
     <div className="card container">
       <div className='row'>
-        <div className='col' style={{width: '50%'}}>
+        <div className='col imgDiv' style={{width: '50%'}}>
           <img src={background} className= 'card-img-top' alt='background'/>
         </div>
         
         <div className='card-body col'>
-          <TodoForm inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
-          <TodoList inputText={inputText}/>
+          <TodoForm
+            inputText={inputText}
+            setInputText={setInputText}
+            todos={todos}
+            setTodos={setTodos}
+          />
+          <TodoList
+            todos={todos}
+          />
         </div>
       </div>
       

@@ -15,7 +15,7 @@ function TodoForm(props) {
         setTodos([
             ...todos,
             {
-                text: inputText,
+                task: inputText,
                 completed: false,
                 id: uniqueId
             }
@@ -34,8 +34,8 @@ function TodoForm(props) {
                         onChange={onChange}
                         placeholder='Add a todo'
                     />
-                    <button type="submit" class="btn btn-outline-secondary">
-                    <i class="fa-solid fa-plus"></i>
+                    <button type="submit" className="btn btn-outline-secondary">
+                    <i className="fa-solid fa-plus"></i>
                     </button>
                 </div>
                 <div className='col-3'>

@@ -9,8 +9,9 @@ h1 {
   text-align: center;
 }
 
-img {
+.imgDiv {
   height: 80%;
+  padding-bottom: 3%;
 }
 
 .card-body {
