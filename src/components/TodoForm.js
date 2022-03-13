@@ -50,7 +50,7 @@ function TodoForm(props) {
                     </button>
                 </div>
                 <div className='col-3'>
-                    <select className='form-select' defaultValue="All" onChange={statusHandler}>
+                    <select className='form-select' aria-label='select example' defaultValue="All" onChange={statusHandler}>
                         <option value='all'>All</option>
                         <option value='completed'>Completed</option>
                         <option value='uncompleted'>Uncompleted</option>
