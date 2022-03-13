@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 
 function TodoForm(props) {
 
+//*props that are passed down from App.js
     const {
         inputText,
         setInputText,
@@ -35,7 +36,7 @@ function TodoForm(props) {
 
   return (
         <form className='todo-form'onSubmit={handleSubmit}>
-            <div className='row justify-content-center'>
+            <div className='row justify-content-around'>
                 <div className='col-6' style={{display: 'flex'}}>
                     <input
                         type='text'

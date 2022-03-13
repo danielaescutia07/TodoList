@@ -11,7 +11,7 @@ function TodoList(props) {
 
   return (
       <div style={{margin: '7%'}}>
-          <ul>
+          <ul className='list-unstyled'>
             {filtered.map(todo => (
                 <Todo
                     task={todo.task}

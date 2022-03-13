@@ -11,13 +11,20 @@ import TodoList from './components/TodoList';
 
 function App() {
 
+//*Slices of State
   const [inputText, setInputText] = useState('');
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState('All');
   const [filtered, setFiltered] = useState([]);
 
+//*UseEffect - first will run once - second one will run every time todos and status updates
+  useEffect(() => {
+    getLocal();
+  }, []);
+
   useEffect(() => {
     filterHandler();
+    saveToLocal();
   }, [todos, status]);
 
   const filterHandler = () => {
@@ -31,6 +38,20 @@ function App() {
       default:
         setFiltered(todos);
         break
+    }
+  };
+
+//*Save Local Storage
+  const saveToLocal = ()  => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  };
+
+  const getLocal = () => {
+    if (localStorage.getItem('todos') === null) {
+      localStorage.setItem('todos', JSON.stringify([]));
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem('todos'));
+      setTodos(todoLocal);
     }
   };
 
