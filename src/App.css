@@ -20,3 +20,8 @@ h1 {
   justify-content: center;
   margin: 5%;
 }
+
+.completed {
+  text-decoration: line-through;
+  opacity: .5;
+}

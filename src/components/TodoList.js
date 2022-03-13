@@ -3,13 +3,23 @@ import Todo from './Todo';
 
 function TodoList(props) {
 
-    const { todos, inputText } = props;
+    const {
+        todos,
+        setTodos,
+        filtered
+    } = props;
 
   return (
       <div style={{margin: '7%'}}>
           <ul>
-            {todos.map(todo => (
-                <Todo task={todo.task} key={todo.id}/>
+            {filtered.map(todo => (
+                <Todo
+                    task={todo.task}
+                    key={todo.id}
+                    todo={todo}
+                    todos={todos}
+                    setTodos={setTodos}
+                />
             ))}
           </ul>
       </div>

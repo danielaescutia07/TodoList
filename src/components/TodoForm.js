@@ -3,7 +3,13 @@ import { v4 as uuid } from 'uuid';
 
 function TodoForm(props) {
 
-    const {inputText, setInputText, todos, setTodos} = props;
+    const {
+        inputText,
+        setInputText,
+        todos,
+        setTodos,
+        setStatus,
+    } = props;
     const uniqueId = uuid();
 
     const onChange = (e) => {
@@ -23,6 +29,10 @@ function TodoForm(props) {
         setInputText('');
     };
 
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
+    };
+
   return (
         <form className='todo-form'onSubmit={handleSubmit}>
             <div className='row justify-content-center'>
@@ -39,7 +49,7 @@ function TodoForm(props) {
                     </button>
                 </div>
                 <div className='col-3'>
-                    <select className='form-select' defaultValue="All">
+                    <select className='form-select' defaultValue="All" onChange={statusHandler}>
                         <option value='all'>All</option>
                         <option value='completed'>Completed</option>
                         <option value='uncompleted'>Uncompleted</option>
